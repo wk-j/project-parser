@@ -1,1 +1,1 @@
-## Project Parser
+## Project Parser [![Build Status](https://travis-ci.org/wk-j/project-parser.svg?branch=master)](https://travis-ci.org/wk-j/project-parser)

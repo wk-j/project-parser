@@ -33,7 +33,7 @@ namespace ProjectParser {
                             break;
                         }
                     case "PackageId": {
-                            info.Version = value;
+                            info.PackageId = value;
                             break;
                         }
                     default: {
