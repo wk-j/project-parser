@@ -1,3 +1,5 @@
+#addin nuget:?package=ProjectParser&version=0.2.0
+
 var project = "src/ProjectParser/ProjectParser.csproj";
 
 var npi = EnvironmentVariable("npi");
