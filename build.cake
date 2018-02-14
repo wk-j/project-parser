@@ -24,7 +24,9 @@ Task("Build")
 Task("Create-Nuget-Package")
     .IsDependentOn("Build")
     .Does(() => {
-        DotNetCorePack(project);
+        DotNetCorePack(project, new DotNetCorePackSettings { 
+            Configuration = "Release"
+        });
     });
 
 Task("Publish-Nuget")

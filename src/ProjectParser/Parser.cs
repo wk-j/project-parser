@@ -5,12 +5,6 @@ using System.Linq;
 
 namespace ProjectParser {
 
-    public class ProjectInfo {
-        public string Version { set; get; } = "";
-        public string PackageId { set; get; } = "";
-        public string Title { set; get; } = "";
-    }
-
     public static class Parser {
         public static ProjectInfo Parse(string projectFile) {
             var xml = File.ReadAllText(projectFile);
@@ -24,10 +18,6 @@ namespace ProjectParser {
                 var value = el.Value;
 
                 switch (name) {
-                    case "Title": {
-                            info.Title = value;
-                            break;
-                        }
                     case "Version": {
                             info.Version = value;
                             break;
