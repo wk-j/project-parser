@@ -1,11 +1,13 @@
 #addin nuget:?package=ProjectParser&version=0.3.0
 
+using ProjectParser;
+
 var project = "src/ProjectParser/ProjectParser.csproj";
 var npi = EnvironmentVariable("npi");
 
 Task("Version").Does(() => {
-    //var info = ProjectParser.Parser.Parse(project);
-    //Information($"Versin = {info.Version}");
+    var info = Parser.Parse(project);
+    Information($"Versin = {info.Version}");
 });
 
 Action<string,string,string> ps = (cmd, args, dir) => {
