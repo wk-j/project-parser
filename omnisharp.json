@@ -15,5 +15,8 @@
     },
     "script": {
         "enableScriptNuGetReferences": true
+    },
+    "cake": {
+        "bakeryPath": "tools/Cake.Bakery/tools/Cake.Bakery.exe"
     }
 }

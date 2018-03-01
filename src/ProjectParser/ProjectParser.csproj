@@ -2,7 +2,7 @@
   <PropertyGroup>
     <PackageId>ProjectParser</PackageId>
     <OutputType>Library</OutputType>
-    <TargetFramework>netstandard1.6</TargetFramework>
-    <Version>0.3.0</Version>
+    <TargetFrameworks>netstandard1.6;netstandard2.0;net45</TargetFrameworks>
+    <Version>0.4.0</Version>
   </PropertyGroup>
 </Project>

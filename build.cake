@@ -1,5 +1,4 @@
 #addin nuget:?package=ProjectParser&version=0.3.0
-
 using ProjectParser;
 
 var project = "src/ProjectParser/ProjectParser.csproj";
@@ -33,14 +32,15 @@ Task("Create-Nuget-Package")
     .IsDependentOn("Build")
     .Does(() => {
         DotNetCorePack(project, new DotNetCorePackSettings { 
-            Configuration = "Release"
+            Configuration = "Release",
+            OutputDirectory = "publish"
         });
     });
 
 Task("Publish-Nuget")
     .IsDependentOn("Create-Nuget-Package")
     .Does(() => {
-        var nupkg = new DirectoryInfo("src/ProjectParser/bin/Release").GetFiles("*.nupkg").LastOrDefault();
+        var nupkg = new DirectoryInfo("publish").GetFiles("*.nupkg").LastOrDefault();
         var package = nupkg.FullName;
         NuGetPush(package, new NuGetPushSettings {
             Source = "https://www.nuget.org/api/v2/package",
