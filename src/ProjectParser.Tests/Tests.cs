@@ -6,8 +6,9 @@ namespace ProjectParser.Tests {
         [Fact]
         public void ShouldReadProjectFile() {
             var project = "../../../../../src/ProjectParser/ProjectParser.csproj";
-            var rs = Parser.Parse(project);
-            Assert.Equal("ProjectParser", rs.PackageId);
+            var info = Parser.Parse(project);
+            Assert.Equal("wk.ProjectParser", info.PackageId);
+            Assert.Equal("0.4.0", info.Version);
         }
     }
 }
